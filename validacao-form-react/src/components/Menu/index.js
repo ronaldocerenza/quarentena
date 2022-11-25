@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -6,7 +6,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+import UserContext from '../../contexts/UserContext'
+
 const Menu = () => {
+
+  const { user } = useContext(UserContext)
 
   return (
     <Navbar
@@ -25,6 +29,12 @@ const Menu = () => {
           <LinkContainer to="/cadastro">
             <Nav.Link>Cadastro</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/usuario">
+            <Nav.Link>Usuário</Nav.Link>
+          </LinkContainer>
+        </Nav>
+        <Nav>
+          <Nav.Link href='#'>{user}</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
