@@ -1,5 +1,7 @@
 body {
+  /*Os comandos devem partir do pai*/
   background: #CCC;
+  /*100vh tira o padrão para justificar o body na vertical*/
   height: 100vh;
   margin: 0;
 
